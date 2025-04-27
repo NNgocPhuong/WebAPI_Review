@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "Basic_WebAPI.Controllers.VideoGameController",
+    "Method": "GetAll",
+    "RelativePath": "api/VideoGame",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Basic_WebAPI.Controllers.VideoGameController",
+    "Method": "Add",
+    "RelativePath": "api/VideoGame",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "videoGame",
+        "Type": "Basic_WebAPI.DTO.VideoGameDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Basic_WebAPI.Controllers.VideoGameController",
+    "Method": "Get",
+    "RelativePath": "api/VideoGame/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
