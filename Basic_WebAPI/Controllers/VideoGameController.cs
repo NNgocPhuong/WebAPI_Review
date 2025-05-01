@@ -21,14 +21,14 @@ namespace Basic_WebAPI.Controllers
             var videoGames = await context.GetVideoGameListAsync(); 
             return Ok(videoGames);
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             var videoGame = await context.GetVideoGameByIdAsync(id);
             return Ok(videoGame);
         }
         [HttpPost]
-        public async Task<IActionResult> Add(VideoGameDto videoGame)
+        public async Task<IActionResult> Add([FromBody]VideoGameDto videoGame)
         {
             if(ModelState.IsValid)
             {
@@ -43,9 +43,10 @@ namespace Basic_WebAPI.Controllers
                 {
                     return BadRequest("Game này da ton tai");
                 }
-                return CreatedAtAction(nameof(Add), game);
+                return CreatedAtAction(nameof(Get), new { id = result.VideoGameId }, result);
             }    
             return BadRequest();
         }
+        
     }
 }
